@@ -1,0 +1,251 @@
+/* Qyntiv : site de la marque mère des logiciels d'Emmanuel Percheron.
+   Direction : luxe futuriste, dans l'esprit de NEOM. Nuit du désert, ligne de lumière à l'horizon,
+   ivoire et or champagne, grands espaces, typographie fine. Mouvements lents et feutrés.
+   Aucune ressource externe ; tout s'immobilise si le visiteur réduit les animations. */
+
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("../fonts/cormorant-italic.woff2") format("woff2"); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("../fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  --nuit: #06070b;
+  --nuit-2: #0b0c12;
+  --ivoire: #f3eee5;
+  --ivoire-doux: #b9b2a6;
+  --ivoire-faible: #7d776d;
+  --or: #cdb084;
+  --or-clair: #ecdcbc;
+  --or-fonce: #9c7f53;
+  --filet: rgba(236, 220, 188, 0.14);
+  --filet-fort: rgba(236, 220, 188, 0.32);
+  --dore: linear-gradient(100deg, #9c7f53 0%, #ecdcbc 45%, #fff6e3 55%, #cdb084 100%);
+  --largeur: 1240px;
+  --serif: "Cormorant", "Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --lent: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--nuit); color: var(--ivoire); font-family: var(--sans); font-weight: 300; font-size: 17px; line-height: 1.7;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+::selection { background: rgba(205, 176, 132, 0.35); }
+:focus-visible { outline: 1px solid var(--or); outline-offset: 4px; }
+.conteneur { width: min(var(--largeur), 100% - 48px); margin-inline: auto; }
+
+/* Petites capitales espacées, la signature du luxe */
+.surtitre, .etiquette, .nav, .bouton, .lien, .pied-page { font-family: var(--sans); font-weight: 500; font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; }
+.etiquette { display: inline-flex; align-items: center; gap: 18px; color: var(--or); }
+.etiquette::before { content: ""; width: 42px; height: 1px; background: linear-gradient(90deg, transparent, var(--or)); }
+.dore { background: linear-gradient(100deg, #8f744b 0%, #cdb084 30%, #fff6e3 45%, #ecdcbc 52%, #cdb084 70%, #8f744b 100%);
+  background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: reflet 9s ease-in-out infinite; }
+@keyframes reflet { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0% 0; } }
+
+/* Grain de film, très léger : la texture d'une image de cinéma */
+body::after { content: ""; position: fixed; inset: -50%; z-index: 100; pointer-events: none; opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(4) infinite; }
+@keyframes grain { 0% { transform: translate(0, 0); } 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-2%, -1%); } 100% { transform: translate(0, 0); } }
+
+/* ------------------------------------------------------------- en-tête */
+.entete { position: fixed; top: 0; left: 0; right: 0; z-index: 30; transition: background 0.6s var(--lent), border-color 0.6s var(--lent); border-bottom: 1px solid transparent; }
+.entete.defile { background: rgba(6, 7, 11, 0.72); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom-color: var(--filet); }
+.entete .conteneur { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 92px; gap: 20px; }
+.nav.gauche { justify-self: start; } .nav.droite { justify-self: end; }
+.marque { display: flex; flex-direction: column; align-items: center; gap: 9px; font-family: var(--serif); font-weight: 400; font-size: 21px; letter-spacing: 0.5em; padding-left: 0.5em; color: var(--ivoire); }
+.marque img { width: 32px; height: 32px; }
+.nav { display: flex; align-items: center; gap: 40px; color: var(--ivoire-doux); font-size: 10.5px; letter-spacing: 0.34em; }
+.nav a { position: relative; transition: color 0.4s var(--lent); }
+.nav a:hover { color: var(--ivoire); }
+.nav a:not(.langue)::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -8px; height: 1px; background: var(--or); transition: right 0.5s var(--lent); }
+.nav a:not(.langue):hover::after { right: 0; }
+.langue { color: var(--or-clair); }
+
+/* ---------------------------------------------------------------- héros */
+.heros { position: relative; padding: 0; height: 100vh; height: 100svh; min-height: 680px; max-height: 1100px; display: flex; align-items: flex-start; overflow: hidden; isolation: isolate; }
+.ciel { position: absolute; inset: 0; z-index: -4;
+  background:
+    radial-gradient(120% 70% at 50% 108%, rgba(214, 148, 88, 0.55) 0%, rgba(150, 86, 60, 0.28) 28%, transparent 60%),
+    radial-gradient(70% 40% at 50% 70%, rgba(236, 220, 188, 0.12), transparent 70%),
+    linear-gradient(180deg, #04050a 0%, #080a14 38%, #141322 62%, #2a1d1c 78%, #3b2618 88%); }
+.etoiles { position: absolute; inset: 0 0 35% 0; z-index: -3; opacity: 0.7;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #fff, transparent), radial-gradient(1px 1px at 28% 8%, #fff8, transparent),
+    radial-gradient(1px 1px at 41% 26%, #fff9, transparent), radial-gradient(1.5px 1.5px at 57% 12%, #fff, transparent),
+    radial-gradient(1px 1px at 69% 30%, #fff8, transparent), radial-gradient(1px 1px at 82% 9%, #fff, transparent),
+    radial-gradient(1px 1px at 91% 22%, #fff9, transparent), radial-gradient(1px 1px at 6% 40%, #fff7, transparent),
+    radial-gradient(1px 1px at 35% 44%, #fff6, transparent), radial-gradient(1px 1px at 76% 46%, #fff6, transparent),
+    radial-gradient(1px 1px at 50% 4%, #fff9, transparent), radial-gradient(1px 1px at 20% 33%, #fff5, transparent);
+  animation: scintille 7s ease-in-out infinite alternate; }
+@keyframes scintille { from { opacity: 0.45; } to { opacity: 0.85; } }
+
+/* La ligne de lumière, posée sur l'horizon, et son reflet sur le sable */
+.ligne-horizon { position: absolute; left: 0; right: 0; top: 83%; z-index: -2; height: 2px; }
+.ligne-horizon::before { content: ""; position: absolute; left: 8%; right: 8%; top: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(236, 220, 188, 0.55) 18%, #fff6e3 50%, rgba(236, 220, 188, 0.55) 82%, transparent);
+  box-shadow: 0 0 18px 2px rgba(255, 230, 190, 0.55), 0 0 80px 10px rgba(214, 148, 88, 0.35); }
+.ligne-horizon::after { content: ""; position: absolute; left: 20%; right: 20%; top: 2px; height: 90px;
+  background: radial-gradient(50% 100% at 50% 0%, rgba(255, 220, 170, 0.22), transparent 70%); filter: blur(6px); }
+.ligne-horizon .eclat { position: absolute; top: -1px; height: 4px; width: 18%; left: 0;
+  background: linear-gradient(90deg, transparent, #fff, transparent); filter: blur(1px); opacity: 0.9;
+  animation: balaye 9s var(--lent) infinite; }
+@keyframes balaye { 0% { left: 4%; opacity: 0; } 15% { opacity: 0.9; } 85% { opacity: 0.9; } 100% { left: 78%; opacity: 0; } }
+
+.coin { position: absolute; bottom: 34px; z-index: 2; color: var(--ivoire-faible); font-size: 10px; letter-spacing: 0.34em; text-transform: uppercase; font-weight: 500; }
+.coin.g { left: max(24px, calc((100% - var(--largeur)) / 2)); } .coin.d { right: max(24px, calc((100% - var(--largeur)) / 2)); }
+.heros .filet-or { display: block; width: 1px; height: 46px; margin: 0 auto 30px; background: linear-gradient(transparent, var(--or)); }
+.dunes { position: absolute; left: 0; right: 0; bottom: 0; height: 18%; width: 100%; z-index: -1; }
+
+.heros .contenu { position: relative; width: 100%; padding: clamp(112px, 14vh, 170px) 0 0; text-align: center; }
+.heros .sceau { display: block; width: clamp(40px, 5vh, 54px); height: auto; margin: 0 auto clamp(14px, 2.4vh, 24px); }
+.heros .nom-marque { font-family: var(--serif); font-weight: 300; font-size: clamp(44px, min(13vw, 19vh), 210px); line-height: 0.9;
+  letter-spacing: 0.22em; padding-left: 0.22em; margin-bottom: clamp(18px, 3vh, 32px); white-space: nowrap; }
+/* Accueil : le nom est déjà en grand, la marque de l'en-tête n'apparaît qu'en descendant */
+.js .accueil .entete .marque { opacity: 0; transform: translateY(-6px); transition: opacity 0.8s var(--lent), transform 0.8s var(--lent); }
+.js .accueil .entete.defile .marque { opacity: 1; transform: none; }
+.ornement { display: flex; align-items: center; justify-content: center; gap: 22px; margin-bottom: clamp(18px, 3vh, 30px); }
+.ornement::before, .ornement::after { content: ""; width: clamp(40px, 8vw, 110px); height: 1px; }
+.ornement::before { background: linear-gradient(90deg, transparent, var(--or)); }
+.ornement::after { background: linear-gradient(90deg, var(--or), transparent); }
+.ornement .surtitre { margin: 0; }
+.devise { font-family: var(--serif); font-weight: 300; font-size: clamp(24px, min(3vw, 4.6vh), 42px); line-height: 1.2; margin-bottom: clamp(16px, 2.6vh, 26px); }
+.devise em { font-style: italic; }
+.heros .surtitre { display: inline-block; color: var(--or-clair); opacity: 0.9; font-size: 10.5px; letter-spacing: 0.5em; }
+.heros h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(48px, min(7.4vw, 11vh), 128px); line-height: 0.95; letter-spacing: -0.015em; margin-bottom: 26px; }
+.heros h1 em { font-style: italic; }
+.heros .intro { max-width: 520px; margin: 0 auto clamp(26px, 4vh, 40px); color: var(--ivoire-doux); font-size: clamp(15px, 1.4vw, 16.5px); line-height: 1.85; }
+.actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.descendre { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; z-index: 2; }
+.descendre::after { content: ""; width: 1px; height: 48px; background: linear-gradient(var(--or), transparent); animation: goutte 2.8s var(--lent) infinite; transform-origin: top; }
+@keyframes goutte { 0% { transform: scaleY(0); opacity: 1; } 70% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* --------------------------------------------------------------- boutons */
+.bouton { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 14px; height: 56px; padding: 0 40px; font-size: 10.5px; letter-spacing: 0.36em;
+  border: 1px solid var(--filet-fort); color: var(--ivoire); overflow: hidden; isolation: isolate; transition: color 0.7s var(--lent), border-color 0.7s var(--lent); }
+.bouton::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, #cdb084, #ecdcbc 50%, #cdb084);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.8s var(--lent); }
+.bouton:hover { color: var(--nuit); border-color: var(--or-clair); }
+.bouton:hover::before { transform: scaleX(1); }
+.bouton.or { border-color: rgba(236, 220, 188, 0.7); color: var(--or-clair); }
+.lien { display: inline-flex; align-items: center; gap: 14px; color: var(--ivoire); font-size: 11.5px; }
+.lien .trait { width: 28px; height: 1px; background: var(--or); transition: width 0.5s var(--lent); }
+.lien:hover .trait { width: 56px; }
+
+/* -------------------------------------------------------------- sections */
+section { position: relative; padding: 150px 0; }
+h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(42px, 5.6vw, 84px); line-height: 1.02; letter-spacing: -0.01em; }
+h2 em { font-style: italic; }
+.chapeau { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: end; margin-bottom: 90px; }
+.chapeau h2 { margin-top: 26px; }
+.chapeau p { color: var(--ivoire-doux); max-width: 440px; justify-self: end; }
+
+/* ----------------------------------------------------------- collection */
+.collection { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px; }
+.oeuvre { position: relative; display: flex; flex-direction: column; }
+.oeuvre .visuel { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #000; }
+.oeuvre .visuel img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 2s var(--lent), filter 2s var(--lent); filter: grayscale(0.85) sepia(0.28) brightness(0.88) contrast(1.05); }
+.oeuvre:hover .visuel img { transform: scale(1.06); filter: none; }
+.oeuvre .visuel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(6, 7, 11, 0.65)); }
+.oeuvre .visuel .cadre-or { position: absolute; inset: 14px; border: 1px solid rgba(236, 220, 188, 0); transition: border-color 0.9s var(--lent), inset 0.9s var(--lent); z-index: 1; }
+.oeuvre:hover .visuel .cadre-or { border-color: rgba(236, 220, 188, 0.45); inset: 20px; }
+.oeuvre .numero { position: absolute; left: 26px; bottom: 22px; z-index: 2; font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--or-clair); }
+.oeuvre .texte { padding: 34px 4px 0; display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.oeuvre .categorie { color: var(--or); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 500; }
+.oeuvre h3 { font-family: var(--serif); font-weight: 300; font-size: clamp(40px, 4vw, 56px); line-height: 1; }
+.oeuvre p { color: var(--ivoire-doux); }
+.oeuvre .details { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--ivoire-faible); font-size: 13px; }
+.oeuvre .details span::before { content: ""; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--or); margin-right: 10px; vertical-align: 3px; }
+.oeuvre .bas { margin-top: auto; padding-top: 26px; border-top: 1px solid var(--filet); display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.prix { font-family: var(--serif); font-size: 26px; font-weight: 300; }
+.prix small { font-family: var(--sans); font-size: 12px; color: var(--ivoire-faible); letter-spacing: 0.08em; margin-left: 6px; }
+.oeuvre .liens { display: flex; gap: 30px; flex-wrap: wrap; }
+.prochainement { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 46px 0; border-top: 1px solid var(--filet); border-bottom: 1px solid var(--filet); margin-top: 26px; flex-wrap: wrap; }
+.prochainement p { font-family: var(--serif); font-size: clamp(26px, 3vw, 36px); font-weight: 300; }
+.prochainement span { color: var(--ivoire-faible); }
+
+/* ---------------------------------------------------------- engagements */
+.engagements { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--filet); }
+.engagement { padding: 46px 34px 0 0; }
+.engagement + .engagement { padding-left: 34px; border-left: 1px solid var(--filet); }
+.engagement .chiffre-romain { font-family: var(--serif); font-style: italic; font-size: 30px; color: var(--or); margin-bottom: 26px; display: block; }
+.engagement h3 { font-family: var(--serif); font-weight: 300; font-size: 30px; line-height: 1.1; margin-bottom: 14px; }
+.engagement p { color: var(--ivoire-doux); font-size: 15.5px; }
+
+/* --------------------------------------------------------------- studio */
+.studio { text-align: center; overflow: hidden; }
+.studio::before { content: ""; position: absolute; left: 50%; top: 50%; width: 900px; height: 900px; transform: translate(-50%, -50%); z-index: -1;
+  background: radial-gradient(circle, rgba(205, 176, 132, 0.10), transparent 60%); }
+.citation { font-family: var(--serif); font-weight: 300; font-style: italic; font-size: clamp(30px, 4vw, 54px); line-height: 1.22; max-width: 980px; margin: 38px auto 44px; }
+.citation .guillemet { color: var(--or); }
+.signature { color: var(--ivoire-doux); }
+.signature strong { display: block; font-weight: 400; color: var(--ivoire); font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 6px; }
+.repere { display: flex; justify-content: center; gap: 60px; margin-top: 80px; flex-wrap: wrap; }
+.repere div { min-width: 160px; }
+.repere b { display: block; font-family: var(--serif); font-weight: 300; font-size: 48px; line-height: 1; margin-bottom: 10px; }
+.repere span { color: var(--ivoire-faible); font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; }
+
+/* ----------------------------------------------------------- pied de page */
+.pied-page { border-top: 1px solid var(--filet); padding: 46px 0 54px; color: var(--ivoire-faible); font-size: 11px; }
+.pied-page .conteneur { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; }
+.pied-page nav { display: flex; gap: 30px; flex-wrap: wrap; }
+.pied-page a:hover { color: var(--ivoire); }
+
+/* ------------------------------------------- pages de texte (Ordalis, légal) */
+.page-texte { padding: 170px 0 60px; }
+.page-texte .conteneur { max-width: 820px; }
+.page-texte h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(48px, 7vw, 92px); line-height: 1; margin: 18px 0 20px; }
+.page-texte h2 { font-size: 34px; margin: 56px 0 14px; }
+.page-texte p, .page-texte li { color: var(--ivoire-doux); }
+.page-texte p + p { margin-top: 12px; }
+.page-texte ul { list-style: none; margin-top: 14px; }
+.page-texte li { position: relative; padding-left: 24px; }
+.page-texte li::before { content: ""; position: absolute; left: 2px; top: 0.72em; width: 5px; height: 5px; background: var(--or); transform: rotate(45deg); }
+.page-texte img { filter: grayscale(0.85) sepia(0.28) brightness(0.88) contrast(1.05); }
+.page-texte li + li { margin-top: 8px; }
+.page-texte a:not(.bouton) { color: var(--ivoire); border-bottom: 1px solid var(--filet-fort); }
+.page-texte .maj { color: var(--ivoire-faible); font-size: 14px; }
+.fond-page { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(90% 50% at 50% 115%, rgba(214, 148, 88, 0.22), transparent 60%), linear-gradient(180deg, #05060a, #0a0b12 60%, #15100f); }
+
+/* ------------------------------------------------------------ apparition */
+.js .apparait { opacity: 0; transform: translateY(34px); transition: opacity 1.6s var(--lent), transform 1.6s var(--lent); }
+.js .apparait.visible { opacity: 1; transform: none; }
+.js .apparait.d1 { transition-delay: 0.15s; } .js .apparait.d2 { transition-delay: 0.3s; } .js .apparait.d3 { transition-delay: 0.45s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .apparait { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------------------------------------------------------- petits écrans */
+@media (max-width: 980px) {
+  .chapeau { grid-template-columns: 1fr; gap: 30px; margin-bottom: 60px; }
+  .chapeau p { justify-self: start; }
+  .engagements { grid-template-columns: repeat(2, 1fr); }
+  .engagement:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 760px) {
+  .entete .conteneur { grid-template-columns: auto 1fr; }
+  .nav.gauche { display: none; }
+  .marque { flex-direction: row; gap: 12px; font-size: 17px; letter-spacing: 0.42em; }
+  .marque img { width: 26px; height: 26px; }
+  .heros .nom-marque { letter-spacing: 0.14em; padding-left: 0.14em; }
+  .ornement { gap: 14px; }
+  .coin { display: none; }
+  .collection { grid-template-columns: 1fr; gap: 70px; }
+  .nav .lien-section { display: none; }
+  section { padding: 100px 0; }
+  .entete .conteneur { height: 72px; }
+  .heros .contenu { padding: 120px 0 180px; }
+  .repere { gap: 34px; }
+}
+@media (max-width: 520px) {
+  .ornement::before, .ornement::after { display: none; }
+  .engagements { grid-template-columns: 1fr; }
+  .engagement, .engagement + .engagement { padding: 36px 0 0; border-left: 0; }
+  .marque { letter-spacing: 0.34em; }
+  .bouton { padding: 0 24px; }
+}
