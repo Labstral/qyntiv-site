@@ -55,7 +55,8 @@ body::after { content: ""; position: fixed; inset: -50%; z-index: 100; pointer-e
 .entete .conteneur { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 92px; gap: 20px; }
 .nav.gauche { justify-self: start; } .nav.droite { justify-self: end; }
 .marque { display: flex; flex-direction: column; align-items: center; gap: 9px; font-family: var(--serif); font-weight: 400; font-size: 21px; letter-spacing: 0.5em; padding-left: 0.5em; color: var(--ivoire); }
-.marque img { width: 32px; height: 32px; }
+.marque img { height: 34px; width: auto; }
+.marque span { color: var(--or-clair); }
 .nav { display: flex; align-items: center; gap: 40px; color: var(--ivoire-doux); font-size: 10.5px; letter-spacing: 0.34em; }
 .nav a { position: relative; transition: color 0.4s var(--lent); }
 .nav a:hover { color: var(--ivoire); }
@@ -98,7 +99,9 @@ body::after { content: ""; position: fixed; inset: -50%; z-index: 100; pointer-e
 .heros .filet-or { display: block; width: 1px; height: 46px; margin: 0 auto 30px; background: linear-gradient(transparent, var(--or)); }
 .dunes { position: absolute; left: 0; right: 0; bottom: 0; height: 18%; width: 100%; z-index: -1; }
 
-.heros .contenu { position: relative; width: 100%; padding: clamp(112px, 14vh, 170px) 0 0; text-align: center; }
+.heros .contenu { position: relative; width: 100%; padding: clamp(100px, 12vh, 160px) 0 0; text-align: center; }
+.logo-heros { margin: 0 auto clamp(14px, 2.6vh, 28px); }
+.logo-heros img { display: block; margin: 0 auto; width: clamp(240px, min(84vw, 46vh), 520px); height: auto; }
 .heros .sceau { display: block; width: clamp(40px, 5vh, 54px); height: auto; margin: 0 auto clamp(14px, 2.4vh, 24px); }
 .heros .nom-marque { font-family: var(--serif); font-weight: 300; font-size: clamp(44px, min(13vw, 19vh), 210px); line-height: 0.9;
   letter-spacing: 0.22em; padding-left: 0.22em; margin-bottom: clamp(18px, 3vh, 32px); white-space: nowrap; }
@@ -232,7 +235,7 @@ h2 em { font-style: italic; }
   .entete .conteneur { grid-template-columns: auto 1fr; }
   .nav.gauche { display: none; }
   .marque { flex-direction: row; gap: 12px; font-size: 17px; letter-spacing: 0.42em; }
-  .marque img { width: 26px; height: 26px; }
+  .marque img { height: 22px; width: auto; }
   .heros .nom-marque { letter-spacing: 0.14em; padding-left: 0.14em; }
   .ornement { gap: 14px; }
   .coin { display: none; }
