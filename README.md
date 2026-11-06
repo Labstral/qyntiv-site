@@ -13,10 +13,17 @@ d'audience, aucune ressource externe : polices (Cormorant et Inter, licence OFL)
   pour savoir si une mise à jour existe (changer `version` et `url` à chaque nouvelle version)
 * `mentions-legales/` et `en/legal-notice/` : mentions légales et protection des données
 * `404.html` : page d'erreur
+* `sur-mesure/` et `en/custom/` : offre de logiciels sur mesure et formulaire de projet (`assets/js/projet.js`).
+  Les demandes partent par Web3Forms (clé dans `projet.js`) et arrivent sur qyntiv@gmail.com.
+
+## Après une modification du style ou des scripts
+
+Changer le numéro `?v=AAAAMMJJ` des liens vers `site.css`, `site.js` et `projet.js` dans toutes les pages :
+sinon les navigateurs des visiteurs gardent l'ancienne version et la page s'affiche de travers.
 
 ## Ajouter un logiciel
 
-Copier un bloc `<article class="logiciel">` dans `index.html` et dans `en/index.html`, puis remplacer
+Copier un bloc `<article class="oeuvre">` dans `index.html` et dans `en/index.html`, puis remplacer
 le texte, les images (dans `assets/img/`) et les liens. Pour l'achat, toujours utiliser l'adresse courte
 Gumroad `https://gumroad.com/l/<code>`, qui reste valable même si la boutique change de nom.
 
