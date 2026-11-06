@@ -411,3 +411,11 @@ h2 em { font-style: italic; }
   .jour .date { margin: 0; }
   .jour .date b { font-size: 24px; }
 }
+/* Remplissage automatique du navigateur : pas de fond clair imposé, le champ reste dans le design */
+.assistant { color-scheme: dark; }
+.champ input:-webkit-autofill, .champ input:-webkit-autofill:hover, .champ input:-webkit-autofill:focus,
+.champ textarea:-webkit-autofill, .champ select:-webkit-autofill {
+  -webkit-text-fill-color: var(--ivoire); caret-color: var(--ivoire);
+  -webkit-box-shadow: 0 0 0 1000px #0f1018 inset; box-shadow: 0 0 0 1000px #0f1018 inset;
+  transition: background-color 600000s 0s, color 600000s 0s; }
+.champ input:autofill, .champ select:autofill { background: transparent; color: var(--ivoire); }
