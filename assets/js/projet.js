@@ -10,7 +10,7 @@
   const CLE_WEB3FORMS = '6ae6555f-7de7-47fe-a69e-ee74cc6cc03b';                 // clé d'accès Web3Forms (web3forms.com) ; vide : envoi par e-mail
   const ADRESSE = 'qyntiv@gmail.com';     // utilisée seulement sans clé
   const MAX_CRENEAUX = 3;
-  const JOURS_PROPOSES = 10;                // jours ouvrés affichés
+  const JOURS_PROPOSES = 12;                // jours proposés : deux semaines, du lundi au samedi
   const CLE_BROUILLON = 'qyntiv-projet-brouillon';
 
   const EN = document.documentElement.lang === 'en';
@@ -86,7 +86,7 @@
     d.setHours(12, 0, 0, 0);
     while (out.length < JOURS_PROPOSES) {
       d.setDate(d.getDate() + 1);
-      if (d.getDay() !== 0 && d.getDay() !== 6) out.push(new Date(d));
+      if (d.getDay() !== 0) out.push(new Date(d));          // pas d'appel le dimanche
     }
     return out;
   };
@@ -99,6 +99,7 @@
     joursOuvres().forEach((d) => {
       const jour = document.createElement('div');
       jour.className = 'jour';
+      jour.style.setProperty('--colonne', d.getDay());   // lundi = 1 ... samedi = 6 : chaque jour dans sa colonne
       jour.innerHTML = `<div class="date"><small>${T.jours[d.getDay()]}</small><b>${d.getDate()}</b><i>${T.mois[d.getMonth()]}</i></div>`;
       [['matin', T.matin], ['apres-midi', T.apresMidi]].forEach(([moment, [nom, heures]]) => {
         const b = document.createElement('button');

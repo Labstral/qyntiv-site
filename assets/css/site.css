@@ -338,7 +338,7 @@ h2 em { font-style: italic; }
 .puce input:focus-visible + span { outline: 1px solid var(--or); outline-offset: 3px; }
 
 /* Créneaux d'appel : les prochains jours ouvrés */
-.jours { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.jours { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
 .jour { border: 1px solid var(--filet); padding: 14px 10px 10px; display: flex; flex-direction: column; gap: 8px; }
 .jour .date { text-align: center; line-height: 1.2; margin-bottom: 4px; }
 .jour .date small { display: block; color: var(--ivoire-faible); font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 500; }
@@ -388,7 +388,7 @@ h2 em { font-style: italic; }
 @media (max-width: 980px) {
   .offre-maison { grid-template-columns: 1fr; gap: 50px; }
   .realisations { grid-template-columns: repeat(2, 1fr); }
-  .jours { grid-template-columns: repeat(5, minmax(118px, 1fr)); overflow-x: auto; padding-bottom: 10px; }
+  .jours { grid-template-columns: repeat(6, minmax(112px, 1fr)); overflow-x: auto; padding-bottom: 10px; }
 }
 @media (max-width: 760px) {
   .page-large { padding: 130px 0 20px; }
@@ -419,3 +419,6 @@ h2 em { font-style: italic; }
   -webkit-box-shadow: 0 0 0 1000px #0f1018 inset; box-shadow: 0 0 0 1000px #0f1018 inset;
   transition: background-color 600000s 0s, color 600000s 0s; }
 .champ input:autofill, .champ select:autofill { background: transparent; color: var(--ivoire); }
+/* Calendrier : chaque jour dans la colonne de son jour de la semaine (lundi à samedi) */
+.jour { grid-column: var(--colonne, auto); }
+@media (max-width: 760px) { .jour { grid-column: auto; } }
