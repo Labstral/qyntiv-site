@@ -8,7 +8,7 @@
 
   // ------------------------------------------------------------- réglages
   const CLE_WEB3FORMS = '6ae6555f-7de7-47fe-a69e-ee74cc6cc03b';                 // clé d'accès Web3Forms (web3forms.com) ; vide : envoi par e-mail
-  const ADRESSE = 'contact@qyntiv.com';     // utilisée seulement sans clé
+  const ADRESSE = 'qyntiv@gmail.com';     // utilisée seulement sans clé
   const MAX_CRENEAUX = 3;
   const JOURS_PROPOSES = 10;                // jours ouvrés affichés
   const CLE_BROUILLON = 'qyntiv-projet-brouillon';
