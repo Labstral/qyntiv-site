@@ -116,7 +116,7 @@ body::after { content: ""; position: fixed; inset: -50%; z-index: 100; pointer-e
 .devise { font-family: var(--serif); font-weight: 300; font-size: clamp(24px, min(3vw, 4.6vh), 42px); line-height: 1.2; margin-bottom: clamp(16px, 2.6vh, 26px); }
 .devise em { font-style: italic; }
 .heros .surtitre { display: inline-block; color: var(--or-clair); opacity: 0.9; font-size: 10.5px; letter-spacing: 0.5em; }
-.heros h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(48px, min(7.4vw, 11vh), 128px); line-height: 0.95; letter-spacing: -0.015em; margin-bottom: 26px; }
+.heros .logo-heros { line-height: 0.95; margin-bottom: 26px; }
 .heros h1 em { font-style: italic; }
 .heros .intro { max-width: 520px; margin: 0 auto clamp(26px, 4vh, 40px); color: var(--ivoire-doux); font-size: clamp(15px, 1.4vw, 16.5px); line-height: 1.85; }
 .actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
