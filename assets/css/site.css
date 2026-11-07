@@ -99,9 +99,9 @@ body::after { content: ""; position: fixed; inset: -50%; z-index: 100; pointer-e
 .heros .filet-or { display: block; width: 1px; height: 46px; margin: 0 auto 30px; background: linear-gradient(transparent, var(--or)); }
 .dunes { position: absolute; left: 0; right: 0; bottom: 0; height: 18%; width: 100%; z-index: -1; }
 
-.heros .contenu { position: relative; width: 100%; padding: clamp(100px, 12vh, 160px) 0 0; text-align: center; }
+.heros .contenu { position: relative; width: 100%; padding: clamp(96px, 11vh, 150px) 0 0; text-align: center; }
 .logo-heros { margin: 0 auto clamp(14px, 2.6vh, 28px); }
-.logo-heros img { display: block; margin: 0 auto; width: clamp(240px, min(84vw, 46vh), 520px); height: auto; }
+.logo-heros img { display: block; margin: 0 auto; width: clamp(220px, min(80vw, 40vh), 500px); height: auto; }
 .heros .sceau { display: block; width: clamp(40px, 5vh, 54px); height: auto; margin: 0 auto clamp(14px, 2.4vh, 24px); }
 .heros .nom-marque { font-family: var(--serif); font-weight: 300; font-size: clamp(44px, min(13vw, 19vh), 210px); line-height: 0.9;
   letter-spacing: 0.22em; padding-left: 0.22em; margin-bottom: clamp(18px, 3vh, 32px); white-space: nowrap; }
@@ -452,3 +452,12 @@ h2 em { font-style: italic; }
 /* Le portrait se fond dans la nuit sur ses quatre côtés, quel que soit le fond : aucun bord visible */
 .portrait img { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 11%, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 13%, #000 87%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 11%, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 13%, #000 87%, transparent 100%);
   -webkit-mask-composite: source-in; mask-composite: intersect; }
+/* Écrans peu hauts (portables 1366 x 768...) : le haut de page se resserre pour rester au-dessus de l'horizon */
+@media (min-width: 761px) and (max-height: 860px) {
+  .heros .contenu { padding-top: 86px; }
+  .logo-heros { margin-bottom: 12px; }
+  .logo-heros img { width: clamp(200px, 33vh, 420px); }
+  .ornement { margin-bottom: 14px; }
+  .devise { margin-bottom: 12px; font-size: clamp(22px, 4.2vh, 36px); }
+  .heros .intro { margin-bottom: 22px; }
+}
