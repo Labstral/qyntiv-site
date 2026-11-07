@@ -448,7 +448,7 @@ h2 em { font-style: italic; }
 .oeuvre .bientot-badge { position: absolute; top: 22px; right: 22px; z-index: 2; padding: 8px 14px; border: 1px solid rgba(236, 220, 188, 0.6);
   color: var(--or-clair); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 500;
   background: rgba(6, 7, 11, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-.prix.bientot { font-style: italic; color: var(--or-clair); }
+.prix.bientot, .prix.mention { font-style: italic; color: var(--or-clair); }
 /* Le portrait se fond dans la nuit sur ses quatre côtés, quel que soit le fond : aucun bord visible */
 .portrait img { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 11%, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 13%, #000 87%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 11%, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 13%, #000 87%, transparent 100%);
   -webkit-mask-composite: source-in; mask-composite: intersect; }
