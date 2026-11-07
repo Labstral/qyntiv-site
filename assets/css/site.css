@@ -467,3 +467,17 @@ h2 em { font-style: italic; }
 .reseaux a { display: inline-flex; width: 18px; height: 18px; color: var(--ivoire-faible); transition: color 0.4s var(--lent), transform 0.4s var(--lent); }
 .reseaux a:hover { color: var(--or-clair); transform: translateY(-2px); }
 .reseaux svg { width: 100%; height: 100%; }
+
+/* Bandeau du guide gratuit, sur l'accueil : discret, après les réalisations */
+section.bandeau-guide { padding: 0 0 40px; }
+.bandeau-guide .cadre { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: clamp(26px, 4vw, 56px); align-items: center;
+  padding: clamp(28px, 3.6vw, 44px) clamp(26px, 4vw, 56px); border: 1px solid var(--filet);
+  background: linear-gradient(120deg, rgba(205, 176, 132, 0.07), rgba(205, 176, 132, 0) 55%), var(--nuit-2); }
+.bandeau-guide img { width: 100%; height: auto; display: block; transform: rotate(-3deg);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(236, 220, 188, 0.18); }
+.bandeau-guide h2 { font-size: clamp(28px, 3vw, 40px); margin-top: 14px; }
+.bandeau-guide p { color: var(--ivoire-doux); margin-top: 10px; max-width: 560px; }
+@media (max-width: 760px) {
+  .bandeau-guide .cadre { grid-template-columns: 1fr; text-align: left; }
+  .bandeau-guide img { width: 110px; }
+}
