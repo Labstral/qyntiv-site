@@ -481,3 +481,34 @@ section.bandeau-guide { padding: 0 0 40px; }
   .bandeau-guide .cadre { grid-template-columns: 1fr; text-align: left; }
   .bandeau-guide img { width: 110px; }
 }
+
+/* Articles de conseils */
+.article .etiquette { margin-top: 6px; }
+.article h1 em { font-style: italic; color: var(--or-clair); }
+.article .chapeau-article { font-size: 20px; line-height: 1.6; color: var(--ivoire); margin-top: 30px; }
+.article h3 { font-family: var(--serif); font-weight: 300; font-size: 30px; line-height: 1.15; margin-bottom: 10px; }
+.article h3 em { font-style: italic; color: var(--or-clair); }
+.article .tableau { margin-top: 20px; }
+.article .tableau + p { margin-top: 20px; }
+.article table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.article th { text-align: left; font-weight: 400; color: var(--or); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; padding: 0 14px 12px 0; border-bottom: 1px solid var(--filet-fort); }
+.article td { padding: 16px 14px 16px 0; border-bottom: 1px solid var(--filet); color: var(--ivoire-doux); vertical-align: top; }
+.article td:first-child { color: var(--ivoire); }
+.article td:nth-child(3) { color: var(--or-clair); white-space: nowrap; }
+.article .encadre { border: 1px solid var(--filet); background: rgba(205, 176, 132, 0.05); padding: 28px 30px; margin: 22px 0; }
+.article .encadre .formule { font-family: var(--serif); font-size: 24px; line-height: 1.35; color: var(--ivoire); margin-bottom: 12px; }
+.article .encadre .formule b { font-weight: 300; color: var(--or); }
+.article .encadre.appel { margin-top: 60px; }
+.article .encadre .actions { justify-content: flex-start; margin-top: 22px; }
+@media (max-width: 760px) {
+  .article .chapeau-article { font-size: 18px; }
+  .article thead { display: none; }
+  .article table, .article tbody, .article tr, .article td { display: block; width: 100%; }
+  .article tr { padding: 14px 0; border-bottom: 1px solid var(--filet); }
+  .article td { border: 0; padding: 3px 0; white-space: normal; }
+  .article td:nth-child(3) { white-space: normal; }
+  .article td::before { content: attr(data-label) " : "; color: var(--ivoire-faible); font-size: 13px; }
+  .article td:first-child::before { content: ""; }
+  .article td:first-child { font-family: var(--serif); font-size: 22px; }
+  .article .encadre { padding: 22px 20px; }
+}
