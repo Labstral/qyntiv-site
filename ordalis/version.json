@@ -1,5 +1,7 @@
 {
-  "version": "0.1.0",
-  "url": "https://qyntiv.com/ordalis/",
-  "notes": ""
+  "version": "0.2.0",
+  "url": "https://github.com/Labstral/ordalis-telechargements/releases/download/v0.2.0/Ordalis-0.2.0-setup.exe",
+  "size": 349700015,
+  "sha256": "e3a0fda12eb74c90d32ddfef5e1ba941980695547bf12731d764398bac7d016b",
+  "notes": "Les mises à jour s'installent maintenant directement depuis Ordalis, en un clic.\nL'intelligence avancée s'installe toute seule et comprend beaucoup mieux vos documents scannés.\nLes dossiers vides peuvent être retirés en un clic, et revenir avec « Tout annuler ».\nRanger un dossier comme « Impression 3D » ne crée plus le même dossier à l'intérieur."
 }
