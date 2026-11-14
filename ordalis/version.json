@@ -1,7 +1,7 @@
 {
-  "version": "0.2.0",
-  "url": "https://github.com/Labstral/ordalis-telechargements/releases/download/v0.2.0/Ordalis-0.2.0-setup.exe",
-  "size": 349700015,
-  "sha256": "e3a0fda12eb74c90d32ddfef5e1ba941980695547bf12731d764398bac7d016b",
-  "notes": "Les mises à jour s'installent maintenant directement depuis Ordalis, en un clic.\nL'intelligence avancée s'installe toute seule et comprend beaucoup mieux vos documents scannés.\nLes dossiers vides peuvent être retirés en un clic, et revenir avec « Tout annuler ».\nRanger un dossier comme « Impression 3D » ne crée plus le même dossier à l'intérieur."
+  "version": "0.3.1",
+  "url": "https://github.com/Labstral/ordalis-telechargements/releases/download/v0.3.1/Ordalis-0.3.1-setup.exe",
+  "size": 349726348,
+  "sha256": "2f6e4ec6e90675875a321ec3120a22c5e4b98baf95ae6f9bf65e8a6c31ca3017",
+  "notes": "Correction : Ordalis range de nouveau vos dossiers, même quand un fichier de projet ou de code se trouve à l'intérieur ou dans un dossier parent. Vos projets restent protégés : ils ne sont jamais ouverts ni réorganisés.\nRecherche : retrouvez une musique par son titre ou son interprète, pas seulement par le nom du fichier.\nPhotos rangées par année de prise de vue, avec un dossier par jour dès 5 photos prises le même jour.\nPlus de dossiers « DSC », « IMGP » ou « DJI » créés à partir des noms donnés par l'appareil photo."
 }
