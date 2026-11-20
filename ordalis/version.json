@@ -1,7 +1,7 @@
 {
-  "version": "0.3.1",
-  "url": "https://github.com/Labstral/ordalis-telechargements/releases/download/v0.3.1/Ordalis-0.3.1-setup.exe",
-  "size": 349726348,
-  "sha256": "2f6e4ec6e90675875a321ec3120a22c5e4b98baf95ae6f9bf65e8a6c31ca3017",
-  "notes": "Correction : Ordalis range de nouveau vos dossiers, même quand un fichier de projet ou de code se trouve à l'intérieur ou dans un dossier parent. Vos projets restent protégés : ils ne sont jamais ouverts ni réorganisés.\nRecherche : retrouvez une musique par son titre ou son interprète, pas seulement par le nom du fichier.\nPhotos rangées par année de prise de vue, avec un dossier par jour dès 5 photos prises le même jour.\nPlus de dossiers « DSC », « IMGP » ou « DJI » créés à partir des noms donnés par l'appareil photo."
+  "version": "0.3.3",
+  "url": "https://github.com/Labstral/ordalis-telechargements/releases/download/v0.3.3/Ordalis-0.3.3-setup.exe",
+  "size": 348683553,
+  "sha256": "62d05126859dd7aa08df1d8eb386f23e44f1d97be4c3a655adfdacb163b32564",
+  "notes": "Rangement automatique : vos dossiers sont rangés même si le PC reste allumé ou en veille plusieurs jours. Ordalis vérifie chaque heure et au réveil du PC, plus seulement au démarrage de Windows.\nLes notifications du rangement automatique s'affichent de nouveau.\nAnnuler un rangement est beaucoup plus rapide, surtout sur un disque externe.\nLes photos sans date de prise de vue (WhatsApp, copies) sont rangées selon la date écrite dans leur nom, plus selon le jour de la copie.\nVersion gratuite : 25 fichiers rangés par mois. La recherche instantanée et le rangement automatique font partie de l'abonnement."
 }
