@@ -1,7 +1,7 @@
 {
-  "version": "0.3.4",
-  "url": "https://github.com/Labstral/ordalis-telechargements/releases/download/v0.3.4/Ordalis-0.3.4-setup.exe",
-  "size": 348705197,
-  "sha256": "88bfec979e25a1e85f0ab44e9e14f5489ac44a0f8437c7bb25af98a972bd017f",
-  "notes": "Rangement automatique : la vérification chaque heure et au réveil du PC fonctionne enfin sur tous les PC. Sur certains, elle ne pouvait pas s'installer et Ordalis ne rangeait qu'au démarrage de Windows.\nLes fichiers récents sont rangés plus vite : dès qu'ils ont 12 heures (au lieu de 24), sans attendre le prochain tour.\nUn fichier ouvert dans un programme reste à sa place et est rangé une fois fermé, sans jamais laisser de copie en double sur un autre disque."
+  "version": "0.3.5",
+  "url": "https://github.com/Labstral/ordalis-telechargements/releases/download/v0.3.5/Ordalis-0.3.5-setup.exe",
+  "size": 348689165,
+  "sha256": "da6059e3d438b9cab47a77afb078feca67ee6592de1ba3005d8370b168c025be",
+  "notes": "Doublons : Ordalis garde toujours l'original et met de côté la copie (« Copie de… », « (1) », « - Copie »), même quand la copie a la même date que l'original.\nLes dossiers « à trier », « vieux », « temp », « divers » ou « Nouveau dossier » ne reçoivent plus de fichiers : ce sont des tas à trier, pas des catégories."
 }
