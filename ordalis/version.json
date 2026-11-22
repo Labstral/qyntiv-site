@@ -1,7 +1,7 @@
 {
-  "version": "0.3.6",
-  "url": "https://github.com/Labstral/ordalis-telechargements/releases/download/v0.3.6/Ordalis-0.3.6-setup.exe",
-  "size": 348683977,
-  "sha256": "48a86050973057969a47b4551887862cf7e22499f70a2ebdd27fff36cc1504e8",
-  "notes": "Un tableau (export bancaire, budget, fichier CSV ou Excel) n'est plus pris pour la facture d'une société parce que son nom figure sur une ligne : il garde son nom et rejoint vos tableurs.\nDoublons : Ordalis garde toujours l'original et met de côté la copie (« Copie de… », « (1) », « - Copie »), même quand la copie a la même date que l'original.\nLes dossiers « à trier », « vieux », « temp », « divers » ou « Nouveau dossier » ne reçoivent plus de fichiers : ce sont des tas à trier, pas des catégories."
+  "version": "0.3.7",
+  "url": "https://github.com/Labstral/ordalis-telechargements/releases/download/v0.3.7/Ordalis-0.3.7-setup.exe",
+  "size": 348716061,
+  "sha256": "14637ca022a2056f8f7b1250a6fb54f99f865a4e4e0bcec4b4e96c1e9aafdc9a",
+  "notes": "Rangement automatique « chaque jour » : Ordalis range dès que vous allumez votre PC le matin, une fois par jour, au lieu d'attendre 24 heures après le dernier passage. Même principe pour « chaque semaine » et « chaque mois ».\nLe journal d'Ordalis note chaque passage du rangement automatique, même quand il n'y a rien à ranger, avec la date du prochain passage.\nUn tableau (export bancaire, budget, fichier CSV ou Excel) n'est plus pris pour la facture d'une société parce que son nom figure sur une ligne.\nDoublons : Ordalis garde toujours l'original et met de côté la copie, et les dossiers « à trier », « vieux » ou « temp » ne reçoivent plus de fichiers."
 }
