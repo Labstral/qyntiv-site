@@ -24,7 +24,8 @@ sinon les navigateurs des visiteurs gardent l'ancienne version et la page s'affi
 ## Ajouter un logiciel
 
 Copier un bloc `<article class="oeuvre">` dans `index.html` et dans `en/index.html`, puis remplacer
-le texte, les images (dans `assets/img/`) et les liens. Pour l'achat, toujours utiliser l'adresse courte
+le texte, les images (dans `assets/img/`) et les liens. Un nombre impair de réalisations : la dernière
+porte la classe `oeuvre large` (pleine largeur, image à gauche), comme Réfabéo. Pour l'achat, toujours utiliser l'adresse courte
 Gumroad `https://gumroad.com/l/<code>`, qui reste valable même si la boutique change de nom.
 
 ## Voir le site sur son PC
