@@ -14,7 +14,7 @@ d'audience, aucune ressource externe : polices (Cormorant et Inter, licence OFL)
 * `mentions-legales/` et `en/legal-notice/` : mentions légales et protection des données
 * `404.html` : page d'erreur
 * `sur-mesure/` et `en/custom/` : offre de logiciels sur mesure et formulaire de projet (`assets/js/projet.js`).
-  Les demandes partent par Web3Forms (clé dans `projet.js`) et arrivent sur qyntiv@gmail.com.
+  Les demandes partent par Web3Forms (clé dans `projet.js`) et arrivent sur qyntiv@gmail.com. Adresse publique : contact@qyntiv.com (redirigée vers qyntiv@gmail.com).
 
 ## Après une modification du style ou des scripts
 
