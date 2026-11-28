@@ -165,6 +165,12 @@ h2 em { font-style: italic; }
 .prix { font-family: var(--serif); font-size: 26px; font-weight: 300; }
 .prix small { font-family: var(--sans); font-size: 12px; color: var(--ivoire-faible); letter-spacing: 0.08em; margin-left: 6px; }
 .oeuvre .liens { display: flex; gap: 30px; flex-wrap: wrap; }
+/* Réalisation en pleine largeur (troisième ligne) : image à gauche, texte à droite */
+@media (min-width: 761px) {
+  .oeuvre.large { grid-column: 1 / -1; flex-direction: row; gap: 34px; margin-top: 26px; }
+  .oeuvre.large .visuel { flex: 0 0 calc(50% - 17px); }
+  .oeuvre.large .texte { padding: 6px 4px 0 30px; }
+}
 .prochainement { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 46px 0; border-top: 1px solid var(--filet); border-bottom: 1px solid var(--filet); margin-top: 26px; flex-wrap: wrap; }
 .prochainement p { font-family: var(--serif); font-size: clamp(26px, 3vw, 36px); font-weight: 300; }
 .prochainement span { color: var(--ivoire-faible); }
